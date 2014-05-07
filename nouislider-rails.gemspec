@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Charles Lee"]
   spec.email         = ["chug2k@gmail.com"]
   spec.summary       = "jquery-nouislider.js for the Rails asset pipeline."
-  spec.description   = "Currently tracking 6.0 of jquery-noUiSlider: https://github.com/leongersen/noUiSlider). All credit and thanks to @leongersen for the awesome library."
+  spec.description   = "Currently tracking 6.1 of jquery-noUiSlider: https://github.com/leongersen/noUiSlider). All credit and thanks to @leongersen for the awesome library."
   spec.homepage      = "https://github.com/chug2k/nouislider-rails"
   spec.license       = "MIT"
 
