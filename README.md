@@ -25,6 +25,10 @@ In your app/assets/javascript manifest file:
 
     //= require jquery.nouislider
 
+If you want to use the `$.Link` feature you would also need to add:
+
+    //= require Link
+
 In your app/assets/stylesheets manifest file:
 
     //= require jquery.nouislider
