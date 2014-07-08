@@ -1,6 +1,6 @@
 # Nouislider::Rails
 
-Currently tracking 6.0 of jquery-noUiSlider: http://refreshless.com/nouislider/. All credit and thanks to @leongersen for the awesome library.
+Currently tracking 6.2.0 of jquery-noUiSlider: http://refreshless.com/nouislider/. All credit and thanks to @leongersen for the awesome library.
 Sorry for not naming it jquery-nouislider-rails, but someone else started another gem a few months ago here (https://github.com/soycamo/jquery-nouislider-rails).
 
 ![screenshot from homepage](https://raw.github.com/chug2k/nouislider-rails/master/screenshot.png)
