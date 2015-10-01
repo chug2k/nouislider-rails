@@ -1,52 +1,23 @@
 # Nouislider::Rails
 
-Currently tracking 7.0.2 of jquery-noUiSlider: http://refreshless.com/nouislider/. All credit and thanks to @leongersen for the awesome library.
-Sorry for not naming it jquery-nouislider-rails, but someone else started another gem a few months ago here (https://github.com/soycamo/jquery-nouislider-rails).
+Currently tracking 8.0.2 of noUiSlider: http://refreshless.com/nouislider/. All credit and thanks to @leongersen for the awesome library.
 
 ![screenshot from homepage](https://raw.github.com/chug2k/nouislider-rails/master/screenshot.png)
 
-## Installation
-
+## Usage
 Add this line to your application's Gemfile:
 
     gem 'nouislider-rails'
 
-And then execute:
+Add the following directive to your application.js:
 
-    $ bundle
+    //= require nouislider
 
-Or install it yourself as:
+Add the following directive to your application.css:
 
-    $ gem install nouislider-rails
+    //= require nouislider
 
-## Usage
-
-## Require Everything
-
-To require everything including libLink, and wNumb, in your app/assets/javascript manifest file:
-
-    //= require jquery.nouislider
-
-To require all styling, in your app/assets/stylesheets manifest file:
-
-    //= require jquery.nouislider
-
-## Require specific options
-
-If you only want the base javascript:
-
-    //= require nouislider/nouislider
-
-If you want to use the `$.Link` feature (binding input fields or other elements to a plugin) you would also need to add:
-
-    //= require libLink/jquery.liblink
-
-If you want to use the `wNumb` feature (number & money formatting) you would also need to add:
-
-    //= require wnumb/wNumb
-
-
-http://refreshless.com/nouislider/more/ has more information on integrating your own styles.
+http://refreshless.com/nouislider/more has more information on integrating your own styles.
 
 ## Contributing
 

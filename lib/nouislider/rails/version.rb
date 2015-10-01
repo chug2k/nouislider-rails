@@ -1,5 +1,5 @@
 module Nouislider
   module Rails
-    VERSION = "7.0.2"
+    VERSION = "8.0.2"
   end
 end
