@@ -15,7 +15,7 @@ Add the following directive to your application.js:
 
 Add the following directive to your application.css:
 
-    //= require nouislider
+    *= require nouislider
 
 http://refreshless.com/nouislider/more has more information on integrating your own styles.
 
