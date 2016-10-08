@@ -1,6 +1,6 @@
 # Nouislider::Rails
 
-Currently tracking 8.2.1 of noUiSlider: http://refreshless.com/nouislider/. All credit and thanks to @leongersen for the awesome library.
+Currently tracking 9.0.0 of noUiSlider: http://refreshless.com/nouislider/. All credit and thanks to @leongersen for the awesome library.
 
 ![screenshot from homepage](https://raw.github.com/chug2k/nouislider-rails/master/screenshot.png)
 
