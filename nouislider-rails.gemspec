@@ -9,14 +9,21 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Charles Lee"]
   spec.email         = ["chug2k@gmail.com"]
   spec.summary       = "nouislider.js for the Rails asset pipeline."
-  spec.description   = "Currently tracking #{Nouislider::Rails::VERSION} of noUiSlider: https://github.com/leongersen/noUiSlider). All credit and thanks to @leongersen for the awesome library."
+  spec.description   = "Currently tracking #{Nouislider::Rails::VERSION} of noUiSlider: https://github.com/leongersen/noUiSlider. All credit and thanks to @leongersen for the awesome library."
   spec.homepage      = "https://github.com/chug2k/nouislider-rails"
   spec.license       = "MIT"
+
+  spec.required_ruby_version = ">= 2.5"
+
+  spec.metadata = {
+    "source_code_uri" => spec.homepage,
+    "changelog_uri"   => "#{spec.homepage}/releases",
+    "bug_tracker_uri" => "#{spec.homepage}/issues"
+  }
 
   spec.files         = `git ls-files -z`.split("\x0")
   spec.require_paths = ["lib"]
 
   spec.add_dependency "railties", ">= 3.1"
-  spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
 end
