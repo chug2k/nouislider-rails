@@ -9,6 +9,8 @@ Add this line to your application's Gemfile:
 
     gem 'nouislider-rails'
 
+### Sprockets
+
 Add the following directive to your application.js:
 
     //= require nouislider
@@ -24,7 +26,22 @@ instead, require only the parts you need:
     *= require nouislider/nouislider.pips
     *= require nouislider/nouislider.tooltips
 
-Then create a slider:
+### Propshaft
+
+Propshaft has no `require` directives, so reference the assets from your layout
+instead:
+
+```erb
+<%= stylesheet_link_tag "nouislider" %>
+<%= javascript_include_tag "nouislider" %>
+```
+
+The individual stylesheets work the same way, e.g.
+`stylesheet_link_tag "nouislider/nouislider.pips"`.
+
+### Creating a slider
+
+Once the assets are loaded:
 
 ```js
 var slider = document.getElementById('slider');
