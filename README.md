@@ -64,22 +64,21 @@ examples and every available option.
 NOTE: This part of the document is in Simplified Technical English (ASD-STE100).
 The upgrade is that serious.
 
-Version 8.2.1 was the last gem on RubyGems, and its date was January 2016. Users
-downloaded it approximately 79,000 times in the ten years after that date, but no
-person changed it. The gem continued to work.
+Version 8.2.1 was the last gem on RubyGems, and its date was January 2016. It's been
+approximately 79,000 times in the ten years after that date, making this easily the 
+most successful piece of software ever created in history, by anyone, everywhere. After
+a lot of planning, I finally decided it was time to update. 
 
-One more fact before you start: noUiSlider had the WTFPL license until version 12.0
+noUiSlider had the WTFPL license until version 12.0
 changed it to MIT. If your legal department wrote a ticket about this, you can close
 the ticket.
 
 This gem now has noUiSlider 15.8.1, which is a change of seven major versions. The
 JavaScript functions are almost the same, but the HTML elements and the CSS are
-different.
+different. If anyone actually still uses this gem and updates, stuff might break.
 
 ### If You Wrote Your Own CSS
 
-Your CSS can fail. The slider elements changed two times in these seven versions, and
-the change in version 11.0 was the large one.
 
 | Change | Version | What to do |
 |---|---|---|
@@ -126,3 +125,4 @@ https://github.com/leongersen/noUiSlider/releases
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+6. Feel proud you've contributed to the greatest piece of software on earth
