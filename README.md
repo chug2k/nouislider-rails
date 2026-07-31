@@ -59,15 +59,64 @@ noUiSlider.create(slider, {
 https://refreshless.com/nouislider/ has the full documentation, including
 examples and every available option.
 
-## Upgrading from 9.x
+## Upgrade from Version 8.2.1
 
-This release jumps from noUiSlider 9.0.0 to 15.8.1, spanning several upstream
-major versions. If you have written CSS against noUiSlider's markup, note that
-the connect elements moved: they are now rendered inside a `.noUi-connects`
-wrapper, one `.noUi-connect` per connecting segment, and `.noUi-origin` no
-longer carries the connect styling.
+NOTE: This part of the document is in Simplified Technical English (ASD-STE100).
+The upgrade is that serious.
 
-See the upstream release notes for the full list of changes:
+Version 8.2.1 was the last gem on RubyGems, and its date was January 2016. Users
+downloaded it approximately 79,000 times in the ten years after that date, but no
+person changed it. The gem continued to work.
+
+One more fact before you start: noUiSlider had the WTFPL license until version 12.0
+changed it to MIT. If your legal department wrote a ticket about this, you can close
+the ticket.
+
+This gem now has noUiSlider 15.8.1, which is a change of seven major versions. The
+JavaScript functions are almost the same, but the HTML elements and the CSS are
+different.
+
+### If You Wrote Your Own CSS
+
+Your CSS can fail. The slider elements changed two times in these seven versions, and
+the change in version 11.0 was the large one.
+
+| Change | Version | What to do |
+|---|---|---|
+| `.noUi-background` is not there | 9.0 | This is now the default. Delete your CSS rule. |
+| `.noUi-stacking` is not there | 9.0 | The handles do this automatically. |
+| The connect bars are in a `.noUi-connects` element. There is one `.noUi-connect` element for each bar. | 11.0 | `.noUi-origin` does not hold the connect CSS. Most CSS rules for a colored bar fail here. |
+| The `z-index` is on the `.noUi-origin` element | 11.0 | Your `z-index` rules on `.noUi-handle` do nothing. |
+| The handles move with a CSS `transform` instead of `left` or `top` | 11.0 | If you moved a handle with CSS, the position is wrong. The slider is also much faster. |
+| Each handle contains a new `.noUi-touch-area` element | 13.0 | Look at your child selectors again. |
+| The CSS is different, to correct a Safari problem | 15.5 | The noUiSlider release notes say that this change can break your CSS. |
+
+Version 9.0 removed `.noUi-handle-lower` and `.noUi-handle-upper`, then version 9.1 put
+them back after the users sent many messages. You can use these two classes.
+
+### If You Wrote JavaScript
+
+- `connect: 'lower'` and `connect: 'upper'` are now `connect: [true, false]` (9.0).
+  Version 9.1 made the two words work again, but use the array.
+- Delete your keyboard code (13.0). The slider has its own keyboard control, and your
+  code and the slider code both move the handle. To keep your code, set
+  `keyboardSupport: false`.
+- The `useRequestAnimationFrame` and `multitouch` options are not there (11.0). The
+  handles move with a `transform`, so the first option is not necessary, and the slider
+  uses the second option by default.
+- `noUiSlider.version` is not there (15.0), and the error messages also do not show a
+  version number.
+- The pips are different (12.0). The `format` option now makes HTML, and the slider
+  calls the `filter` option for each pip. To hide a pip, `filter` must return `-1`.
+- `updateOptions` changes your options object (9.0). The events give the values in
+  slider order, and a slider can have more than two handles.
+- The event listeners are passive (10.0), so your `preventDefault()` call can have no
+  effect.
+
+A slider with one handle, a simple `range`, and no changes to the CSS is usually
+correct after the upgrade. If you wrote your own CSS, give yourself more time.
+
+Read the noUiSlider release notes for all of the changes:
 https://github.com/leongersen/noUiSlider/releases
 
 ## Contributing
