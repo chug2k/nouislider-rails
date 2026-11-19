@@ -5,19 +5,27 @@ Currently tracking 15.8.1 of noUiSlider: https://refreshless.com/nouislider/. Al
 ![screenshot from homepage](https://raw.github.com/chug2k/nouislider-rails/master/screenshot.png)
 
 ## Usage
-Add this line to your application's Gemfile:
+
+Add the following line to your application's `Gemfile`, then run `bundle install`.
+[View the gem on RubyGems](https://rubygems.org/gems/nouislider-rails).
 
     gem 'nouislider-rails'
 
 ### Sprockets
 
-Add the following directive to your application.js:
+If your layout loads the Sprockets `application.js` and `application.css`
+bundles, add this directive at the top of `app/assets/javascripts/application.js`.
 
     //= require nouislider
 
-Add the following directive to your application.css:
+Add the stylesheet directive inside the opening comment of
+`app/assets/stylesheets/application.css`. A minimal manifest looks like this.
 
-    *= require nouislider
+```css
+/*
+ *= require nouislider
+ */
+```
 
 That pulls in the core styles plus the pips and tooltips styles. To cherry-pick
 instead, require only the parts you need:
@@ -41,7 +49,13 @@ The individual stylesheets work the same way, e.g.
 
 ### Creating a slider
 
-Once the assets are loaded:
+Add the slider's target element to your view.
+
+```html
+<div id="slider"></div>
+```
+
+Run this JavaScript after both the element and the noUiSlider script have loaded.
 
 ```js
 var slider = document.getElementById('slider');
@@ -64,10 +78,11 @@ examples and every available option.
 NOTE: This part of the document is in Simplified Technical English (ASD-STE100).
 The upgrade is that serious.
 
-Version 8.2.1 was the last gem on RubyGems, and its date was January 2016. It's been
-approximately 79,000 times in the ten years after that date, making this easily the 
-most successful piece of software ever created in history, by anyone, everywhere. After
-a lot of planning, I finally decided it was time to update. 
+Version 8.2.1 shipped in January 2016. The next RubyGems release, 15.8.1, shipped
+on July 31, 2026. Users downloaded 8.2.1 approximately 79,000 times in those ten
+years, making this easily the most successful piece of software ever created in
+history, by anyone, everywhere. After a lot of planning, I finally decided it was
+time to update.
 
 noUiSlider had the WTFPL license until version 12.0
 changed it to MIT. If your legal department wrote a ticket about this, you can close
@@ -95,7 +110,8 @@ them back after the users sent many messages. You can use these two classes.
 
 ### If You Wrote JavaScript
 
-- `connect: 'lower'` and `connect: 'upper'` are now `connect: [true, false]` (9.0).
+- For one handle, use `connect: [true, false]` for `'lower'` and
+  `connect: [false, true]` for `'upper'` (9.0).
   Version 9.1 made the two words work again, but use the array.
 - Delete your keyboard code (13.0). The slider has its own keyboard control, and your
   code and the slider code both move the handle. To keep your code, set
